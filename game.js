@@ -65,3 +65,17 @@ function checkAnswer(currentLevel) {
     startOver();
   }
 }
+// Function to restart the game
+function startOver() {
+  level = 0;
+  gamePattern = [];
+  gameStarted = false;
+}
+
+// Start the game on any key press
+$(document).keypress(function() {
+  if (!gameStarted) {
+    gameStarted = true;
+    nextSequence();
+  }
+});
