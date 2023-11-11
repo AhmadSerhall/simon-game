@@ -45,3 +45,23 @@ function animatePress(currentColor) {
     $("#" + currentColor).removeClass("pressed");
   }, 100);
 }
+// Function to check the user's answer against the game sequence
+function checkAnswer(currentLevel) {
+  if (userClickedPattern[currentLevel] === gamePattern[currentLevel]) {
+    if (userClickedPattern.length === gamePattern.length) {
+      setTimeout(function() {
+        nextSequence();
+      }, 1000);
+    }
+  } else {
+    playSound("wrong");
+    $("body").addClass("game-over");
+    $("#level-title").text("Game Over, Press Any Key to Restart");
+
+    setTimeout(function() {
+      $("body").removeClass("game-over");
+    }, 200);
+
+    startOver();
+  }
+}
