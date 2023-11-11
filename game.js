@@ -38,4 +38,10 @@ function playSound(name) {
     audio.play();
   }
   
-  
+// Function to animate button presses
+function animatePress(currentColor) {
+  $("#" + currentColor).addClass("pressed");
+  setTimeout(function() {
+    $("#" + currentColor).removeClass("pressed");
+  }, 100);
+}
