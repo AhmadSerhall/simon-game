@@ -32,3 +32,10 @@ $(".btn").click(function() {
     animatePress(userChosenColor);
     checkAnswer(userClickedPattern.length - 1);
   });
+// Function to play sound for a color
+function playSound(name) {
+    const audio = new Audio("sounds/" + name + ".mp3");
+    audio.play();
+  }
+  
+  
