@@ -24,3 +24,11 @@ function nextSequence() {
     $("#" + randomChosenColor).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
     playSound(randomChosenColor);
   }
+// Function to handle user clicks
+$(".btn").click(function() {
+    const userChosenColor = $(this).attr("id");
+    userClickedPattern.push(userChosenColor);
+    playSound(userChosenColor);
+    animatePress(userChosenColor);
+    checkAnswer(userClickedPattern.length - 1);
+  });
